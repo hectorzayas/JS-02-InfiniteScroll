@@ -86,11 +86,11 @@ function applyFilterToQuery() {
 async function getApiKeyFromNetlify() {
     try {
         // Make a GET request to the Netlify function endpoint
-        const response = await fetch('/.netlify/functions/hello');
+        const response = await fetch('/.netlify/functions/unsplashapi');
         // Parse the JSON response
         const data = await response.json();
         // Log the message from the response
-        console.log(data.message); // Should log "Hello World"
+        console.log(data); // Should log "Hello World"
     } catch (error) {
         console.log('Error calling apiNetlifyRequest:', error);
     }
