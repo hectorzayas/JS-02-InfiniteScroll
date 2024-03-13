@@ -200,7 +200,7 @@ h2 {
 @media screen and (max-width: 700px) {
   :root {
     --search-box-size: 20px;
-    --search-box-width: 120px;
+    --search-box-width: 110px;
     --search-font-size: 14px;
   }
 
