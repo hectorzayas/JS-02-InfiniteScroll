@@ -45,6 +45,3 @@ Glass enhances web experiences by leveraging the Unsplash API to dynamically gen
 
 ## Thanks to
 Source Code: [Jacinto Wong](https://github.com/JacintoDesign/infinite-scroll)
-
-## License
-This project is available under the [MIT License](LICENSE.md). Feel free to use, modify, and distribute the code as you see fit.
