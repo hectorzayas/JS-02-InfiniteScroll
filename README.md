@@ -1,6 +1,6 @@
 # Glass
 
-![](https://github.com/hectorzayas/JS-02-InfiniteScroll/blob/main/Glass-InfiniteScroll-Preview.gif)
+![](https://github.com/hectorzayas/JS-02-InfiniteScroll/blob/main/Glass-InfiniteScroll.gif)
 
 ## Overview
 Glass enhances web experiences by leveraging the Unsplash API to dynamically generate and infinitely load high-quality images. It introduces a unique feature allowing users to apply filters, searching for images that match specific criteria directly from Unsplash. This project builds upon the concepts introduced in the [javascript20-projects | Infinite Scroll](https://github.com/JacintoDesign/infinite-scroll) by extending functionality and implementing advanced web development practices.
