@@ -1,23 +1,24 @@
 import axios from 'axios';
 
 const handler = async function (event, context) {
-    try {
+    const filterName = event.queryStringParameters.filterName;
+    const randomCounter = event.queryStringParameters.randomCounter;;
 
+    try {
         // your server-side functionality
         const { UNSPLASH_API_KEY } = process.env;
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ message: UNSPLASH_API_KEY }),
-        };
+        // return {
+        //     statusCode: 200,
+        //     body: JSON.stringify({ message: UNSPLASH_API_KEY }),
+        // };
+
         const config = {
             headers: {
-                'Authorization': 'Client-ID <UNSPLASH_API_KEY>'
+                'Authorization': `Client-ID ${UNSPLASH_API_KEY}`
             }
         };
-
-        // const response = await axios.get('https://api.unsplash.com/photos/random', config)
-        const response = await fetch('https://api.unsplash.com/photos/random', config)
+        const response = await axios.get(`https://api.unsplash.com/photos/random?count=${randomCounter}&query=${filterName}`, config)
 
         if (response.errors !== undefined && response.errors.length) {
             throw new Error(response.errors);

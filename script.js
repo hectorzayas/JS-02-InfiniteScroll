@@ -1,9 +1,6 @@
 // Unsplash API
 let count = 5;
-// const apiKey = process.env.UNSPLASH_API_KEY;
 let query = '';
-// let apiURL = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&query=${query}`;
-let apiURL = '';
 
 const body = document.body;
 
@@ -22,7 +19,8 @@ let isInitialLoad = true;
 
 
 function updateAPIURLWithNewParameters(picCount, picQuery) {
-    apiURL = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${picCount}&query=${picQuery}`;
+    count = picCount;
+    query = picQuery;
 }
 
 // Check if all images are loaded
@@ -83,31 +81,20 @@ function applyFilterToQuery() {
     getPhotos();
 }
 
-async function getApiKeyFromNetlify() {
-    try {
-        // Make a GET request to the Netlify function endpoint
-        const response = await fetch('/.netlify/functions/unsplashapi');
-        // Parse the JSON response
-        const data = await response.json();
-        // Log the message from the response
-        console.log(data); // Should log "Hello World"
-    } catch (error) {
-        console.log('Error calling apiNetlifyRequest:', error);
-    }
-}
-
 // Get photos from Unsplash API
 async function getPhotos() {
     try {
         // throw new Error('Pass API');
-        const response = await fetch(apiURL);
-        photosArray = await response.json();
+        const response = await fetch(`/.netlify/functions/unsplashapi?filterName=${query}&randomCounter=${count}`);
+        const data = await response.json();
+        photosArray = data.response;
         displayPhotos();
         if (isInitialLoad) {
             updateAPIURLWithNewParameters(30, '');
             isInitialLoad = false;
         }
     } catch (error) {
+        console.log('Error calling api: ', error);
         photosArray = localPhotos;
         displayPhotos();
     }
@@ -150,5 +137,4 @@ searchFieldInput.addEventListener('keydown', (event) => {
 });
 
 // On Load
-getApiKeyFromNetlify()
 getPhotos();
