@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=http://hectorzayas.com/
+    ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1>GLASS</h1>
+            <h2>Powered by <a class="hyperlink" href="https://unsplash.com/" target="_blank">Unsplash</a></h2>
+        </div>
+
+        <div class="search-box-container">
+            <input type="text" class="search-input" id="search-input" placeholder="Filter by Tag">
+            <a class="search-btn" id="filter-button" href="#">
+                <!-- Seach Icon -->
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </header>
+    <!-- Loader -->
+    <div class="loader-container" id="loader-container">
+        <span class="loader" id="loader"></span>
+    </div>
+    <!-- Image Container -->
+    <div class="image-container" id="image-container">
+    </div>
+    <!-- Script -->
+    <script src="localPhotosData.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
